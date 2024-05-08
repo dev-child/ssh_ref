@@ -27,14 +27,14 @@ public class JschApplication {
 		instanceVo.setPort(22);
 		instanceVo.setUserName("root");
 		instanceVo.setPassword("root");
-//		instanceVo.setPrivateKey("C:\\Users\\GracefulSoul\\.ssh\\id_rsa");
+		instanceVo.setPrivateKey("C:\\Users\\User\\.ssh\\id_rsa");
 //		instanceVo.setPassphrase("Test!12");
 		return instanceVo;
 	}
 	
 	private static void download() {
 		ActionVo actionVo = new ActionVo();
-		actionVo.setTargetDir("/root/.ssh/");
+		actionVo.setTargetDir("/$HOME/.ssh/");
 		actionVo.setFileName("authorized_keys");
 		if (connector.check(actionVo)) {
 			actionVo.setDestinationDir("C:\\Users\\GracefulSoul\\.ssh\\");
